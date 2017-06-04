@@ -1,0 +1,5 @@
+5
+テスト
+血液型は？,住所は？,趣味は？,一言有りますか？,もう一言？
+radio,select,checkbox,text,text
+A/B/O/AB,東京/埼玉/その他,音楽/TV/寝る,,
