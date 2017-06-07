@@ -1,0 +1,145 @@
+body{
+    margin:0 auto;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+}
+header{
+    background-color: #fff;
+    text-align: center;
+}
+main{
+}
+footer{
+    background-color: #fff;
+    text-align: center;
+}
+
+/*タイトル*/
+h1{
+    padding-top: 30px;
+    font-size: 100px;
+    
+}
+
+.text-last{
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+.text-span{
+    font-weight: bold;
+}
+.blue
+{
+    color: #4285f4;
+    font-size: 100px;
+}
+.red
+{
+    color: #ea4335;
+    font-size: 100px;
+}
+.yellow
+{
+    color: #fbc605;
+    font-size: 100px;
+}
+.green
+{
+    color: #34a853;
+    font-size: 100px;
+}
+
+.search-pos
+{
+    padding-top: 30px;
+}
+.search-box
+{
+    width: 428px;
+    height: 120px;
+    font-size: 15px;
+}
+.main-pos
+{
+    padding-top: 30px;
+    text-align: center;
+}
+.main
+{
+    display: inline-block;
+    text-align: left;
+}
+ul
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+a{
+    font-size: 20px;
+}
+/*buttonSearch*/
+.buttonSearch {
+    margin: 0 auto;
+    border: none;
+    box-sizing:border-box;
+    display: inline-block;
+    font-size: 13px;
+    position: relative;
+    cursor: pointer;
+    height: 36px;
+    background-color: #f4f4f4;
+    color: #AAA7A6;
+    overflow:hidden;
+    width:90px;
+}
+.buttonSearch:hover
+{
+    color: #000000;
+    border:solid 1px;
+    border-color:#c6c6c6;
+}
+.left
+{
+    padding-right: 40px;
+}
+.c-box
+{
+    display: inline-block;
+    text-align: left;
+}
+/*buttonSearch(右)*/
+.buttonSearch-right {
+    border:none;
+    background-color: #f4f4f4;
+    color: #AAA7A6;
+    overflow:hidden;
+    width:138px;
+    margin: 0 auto;
+    box-sizing:border-box;
+    display: inline-block;
+    font-size: 13px;
+    position: relative;
+    cursor: pointer;
+    height: 36px;
+}
+.buttonSearch-right:hover
+{
+    color: #000000;
+    border:solid 1px;
+    border-color:#c6c6c6;
+}
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+table
+{
+    font-size: 15px;
+}
+button
+{
+    font-size: 15px;
+}
