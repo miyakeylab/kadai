@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2017 年 6 月 07 日 21:01
+-- Generation Time: 2017 年 6 月 08 日 16:26
 -- サーバのバージョン： 5.6.21
 -- PHP Version: 5.6.3
 
@@ -51,15 +51,15 @@ CREATE TABLE IF NOT EXISTS `gs_07_book_okini_table` (
   `user_id` int(12) NOT NULL COMMENT 'ユーザーID',
   `book_id` int(12) NOT NULL COMMENT '本ID',
   `add_time` datetime NOT NULL COMMENT '追加時間'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- テーブルのデータのダンプ `gs_07_book_okini_table`
 --
 
 INSERT INTO `gs_07_book_okini_table` (`id`, `user_id`, `book_id`, `add_time`) VALUES
-(1, 1, 1, '2017-06-08 02:58:55'),
-(2, 1, 5, '2017-06-08 02:58:55');
+(5, 1, 1, '2017-06-08 04:44:19'),
+(6, 1, 3, '2017-06-08 04:44:31');
 
 -- --------------------------------------------------------
 
@@ -179,6 +179,7 @@ CREATE TABLE IF NOT EXISTS `gs_07_user_table` (
 `id` int(12) NOT NULL,
   `user_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `user_mail` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_age` int(3) NOT NULL,
   `time` datetime NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -186,14 +187,14 @@ CREATE TABLE IF NOT EXISTS `gs_07_user_table` (
 -- テーブルのデータのダンプ `gs_07_user_table`
 --
 
-INSERT INTO `gs_07_user_table` (`id`, `user_name`, `user_mail`, `time`) VALUES
-(1, 'Miyake', 'Miyake@test.test', '2017-06-08 02:22:51'),
-(2, 'test1', 'test1@test.test', '2017-06-08 02:24:38'),
-(3, 'test2', 'test2@test.test', '2017-06-08 02:24:38'),
-(4, 'test3', 'test3@test.test', '2017-06-08 02:24:38'),
-(5, 'test4', 'test4@test.test', '2017-06-08 02:24:38'),
-(6, 'test5', 'test5@test.test', '2017-06-08 02:24:38'),
-(7, 'test6', 'test6@test.test', '2017-06-08 02:24:38');
+INSERT INTO `gs_07_user_table` (`id`, `user_name`, `user_mail`, `user_age`, `time`) VALUES
+(1, 'Miyake', 'Miyake@test.test', 32, '2017-06-08 02:22:51'),
+(2, 'test1', 'test1@test.test', 15, '2017-06-08 02:24:38'),
+(3, 'test2', 'test2@test.test', 45, '2017-06-08 02:24:38'),
+(4, 'test3', 'test3@test.test', 50, '2017-06-08 02:24:38'),
+(5, 'test4', 'test4@test.test', 23, '2017-06-08 02:24:38'),
+(6, 'test5', 'test5@test.test', 35, '2017-06-08 02:24:38'),
+(7, 'test6', 'test6@test.test', 104, '2017-06-08 02:24:38');
 
 -- --------------------------------------------------------
 
@@ -282,7 +283,7 @@ ALTER TABLE `gs_an_table`
 -- AUTO_INCREMENT for table `gs_07_book_okini_table`
 --
 ALTER TABLE `gs_07_book_okini_table`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'お気に入りID',AUTO_INCREMENT=3;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT COMMENT 'お気に入りID',AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `gs_07_book_rental_table`
 --

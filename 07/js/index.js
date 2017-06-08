@@ -72,5 +72,54 @@ $(function() {
         text.select();
         document.execCommand("copy");
     });
-
+    $("#sqlbtn_9").on("click", function() {
+        $("#sqltext_9").val("SELECT * FROM gs_07_book_table AS a LEFT JOIN gs_07_book_rental_table AS b ON a.book_id = b.book_key_id;");
+    });
+    $("#sqlcpybtn_9").on("click", function() {
+        var text = document.getElementById("sqltext_9");
+        text.select();
+        document.execCommand("copy");
+    });
+    
+    $("#sqlbtn_10").on("click", function() {
+        $("#sqltext_10").val("SELECT * FROM gs_07_book_table AS a RIGHT JOIN gs_07_book_rental_table AS b ON a.book_id = b.book_key_id;");
+    });
+    $("#sqlcpybtn_10").on("click", function() {
+        var text = document.getElementById("sqltext_10");
+        text.select();
+        document.execCommand("copy");
+    });
+    $("#sqlbtn_11").on("click", function() {
+        $("#sqltext_11").val("SELECT SUM(user_age) FROM gs_07_user_table;");
+    });
+    $("#sqlcpybtn_11").on("click", function() {
+        var text = document.getElementById("sqltext_11");
+        text.select();
+        document.execCommand("copy");
+    });
+    $("#sqlbtn_12").on("click", function() {
+        $("#sqltext_12").val("SELECT AVG(user_age) FROM gs_07_user_table;");
+    });
+    $("#sqlcpybtn_12").on("click", function() {
+        var text = document.getElementById("sqltext_12");
+        text.select();
+        document.execCommand("copy");
+    });
+    $("#sqlbtn_13").on("click", function() {
+        $("#sqltext_13").val("SELECT TRUNCATE(AVG(user_age),0) FROM gs_07_user_table;");
+    });
+    $("#sqlcpybtn_13").on("click", function() {
+        var text = document.getElementById("sqltext_13");
+        text.select();
+        document.execCommand("copy");
+    });
+    
+    $("#sqlbtn_14").on("click", function() {
+        $("#sqltext_14").val("SELECT * FROM gs_07_user_table WHERE user_age < (SELECT TRUNCATE(AVG(user_age),0) FROM gs_07_user_table);");
+    });
+    $("#sqlcpybtn_14").on("click", function() {
+        var text = document.getElementById("sqltext_14");
+        text.select();
+        document.execCommand("copy");
+    });
 });

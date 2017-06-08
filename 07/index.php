@@ -104,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
-                <br>⑥お気に入りとユーザーテーブルを結合
+                <br>⑥[INNER JOIN]お気に入りとユーザーテーブルを結合
             </p>
             <textarea id="sqltext_6" class="search-box" wrap="soft" ></textarea><br>
             <button type="button" class="btn btn-primary" id="sqlbtn_6" >SQL生成</button>
@@ -112,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
-                <br>⑦レンタル中で、現在の日付でレンタル期限が過ぎている本
+                <br>⑦[比較]レンタル中で、現在の日付でレンタル期限が過ぎている本
             </p>
             <textarea id="sqltext_7" class="search-box" wrap="soft" ></textarea><br>
             <button type="button" class="btn btn-primary" id="sqlbtn_7" >SQL生成</button>
@@ -120,14 +120,60 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
-                <br>⑧本の在庫数を取得
+                <br>⑧[COUNT]本の在庫数を取得
             </p>
             <textarea id="sqltext_8" class="search-box" wrap="soft" ></textarea><br>
             <button type="button" class="btn btn-primary" id="sqlbtn_8" >SQL生成</button>
             <button type="button" class="btn btn-success" id="sqlcpybtn_8" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
-            </div>
 
+            <p class="lead">
+                <br>⑨[LEFT JOIN]本テーブルに本レンタルテーブルを結合(本IDで一致)
+            </p>
+            <textarea id="sqltext_9" class="search-box" wrap="soft" ></textarea><br>
+            <button type="button" class="btn btn-primary" id="sqlbtn_9" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_9" >テキストエリアをコピー</button>
+            <a  href="sql.php">SQL実行ページへ</a>
+               
+            <p class="lead">
+                <br>⑩[RIGHT JOIN]本テーブルが本レンタルテーブルへ結合(本IDで一致)
+            </p>
+            <textarea id="sqltext_10" class="search-box" wrap="soft" ></textarea><br>
+            <button type="button" class="btn btn-primary" id="sqlbtn_10" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_10" >テキストエリアをコピー</button>
+            <a  href="sql.php">SQL実行ページへ</a>
+            
+            <p class="lead">
+                <br>11.[SUM]ユーザーテーブルの年齢を合算
+            </p>
+            <textarea id="sqltext_11" class="search-box" wrap="soft" ></textarea><br>
+            <button type="button" class="btn btn-primary" id="sqlbtn_11" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_11" >テキストエリアをコピー</button>
+            <a  href="sql.php">SQL実行ページへ</a>
+            
+            <p class="lead">
+                <br>12.[AVG]ユーザーテーブルのユーザーの平均年齢を取得
+            </p>
+            <textarea id="sqltext_12" class="search-box" wrap="soft" ></textarea><br>
+            <button type="button" class="btn btn-primary" id="sqlbtn_12" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_12" >テキストエリアをコピー</button>
+            <a  href="sql.php">SQL実行ページへ</a>
+            <p class="lead">
+                <br>12-2.[AVG]ユーザーテーブルのユーザーの平均年齢を取得(小数点切り捨て)
+            </p>
+            <textarea id="sqltext_13" class="search-box" wrap="soft" ></textarea><br>
+            <button type="button" class="btn btn-primary" id="sqlbtn_13" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_13" >テキストエリアをコピー</button>
+            <a  href="sql.php">SQL実行ページへ</a>
+            
+            <p class="lead">
+                <br>13.[副問い合わせ]平均年齢(小数点切り捨て)以下のユーザーを取得
+            </p>
+            <textarea id="sqltext_14" class="search-box" wrap="soft" ></textarea><br>
+            <button type="button" class="btn btn-primary" id="sqlbtn_14" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_14" >テキストエリアをコピー</button>
+            <a  href="sql.php">SQL実行ページへ</a>
+        </div>
             <div >
                 <h3>ユーザーテーブル(gs_07_user_table)</h3>
                 <table class="table table-bordered"><?=$master_1?></table>

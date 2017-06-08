@@ -49,9 +49,7 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
 </head>
 
 <body>
-    <div>
-        <a class="navbar-brand" href="index.php">戻る</a>
-    </div>
+
     <header>
         <h1><span class="blue">S</span><span class="red">q</span><span class="yellow">q</span><span class="blue">q</span><span class="green">l</span><span class="red">e</span></h1>
     </header>
@@ -71,10 +69,13 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
                 </li>
         </ul>
         </form>
+        <div>
+            <a class="navbar-brand" href="index.php">戻る</a>
+        </div>
         <div class="container">
             <table class="table table-bordered"><?=$view?></table>
         </div>
-
+ 
     </main>
 
     <footer></footer>
