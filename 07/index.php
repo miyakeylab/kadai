@@ -62,71 +62,71 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
                     <br>【本のレンタル管理システム】を例に使用しています。
                     <br>一番下に現在のテーブルの一覧が表示されています。<br></p>
 
-            </div>
 
             <p class="lead">
                 <br>①ユーザーテーブル一覧の取得
             </p>
             <textarea id="sqltext_1" class="search-box" wrap="soft" ></textarea><br>
-            <button id="sqlbtn_1" >SQL生成</button>
-            <button id="sqlcpybtn_1" >テキストエリアをコピー</button>
+            <button type="button" class="btn btn-primary" id="sqlbtn_1" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_1" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
                 <br>②ブラックリストのユーザーの名前の取得
             </p>
             <textarea id="sqltext_2" class="search-box" wrap="soft" ></textarea><br>
-            <button id="sqlbtn_2" >SQL生成</button>
-            <button id="sqlcpybtn_2" >テキストエリアをコピー</button>
+            <button type="button" class="btn btn-primary" id="sqlbtn_2" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_2" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
                 <br>③ユーザーID(***)のお気に入りに本ID(b***)を追加
             </p>
             <textarea id="sqltext_3" class="search-box" wrap="soft" ></textarea><br>
-            <button id="sqlbtn_3" >SQL生成</button>
-            <button id="sqlcpybtn_3" >テキストエリアをコピー</button>
+            <button type="button" class="btn btn-primary" id="sqlbtn_3" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_3" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
                 <br>④ユーザーID(***)のお気に入りを削除
             </p>
             <textarea id="sqltext_4" class="search-box" wrap="soft" ></textarea><br>
-            <button id="sqlbtn_4" >SQL生成</button>
-            <button id="sqlcpybtn_4" >テキストエリアをコピー</button>
+            <button type="button" class="btn btn-primary" id="sqlbtn_4" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_4" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
                 <br>⑤お気に入り全データ削除
             </p>
             <textarea id="sqltext_5" class="search-box" wrap="soft" ></textarea><br>
-            <button id="sqlbtn_5" >SQL生成</button>
-            <button id="sqlcpybtn_5" >テキストエリアをコピー</button>
+            <button type="button" class="btn btn-primary" id="sqlbtn_5" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_5" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
                 <br>⑥お気に入りとユーザーテーブルを結合
             </p>
             <textarea id="sqltext_6" class="search-box" wrap="soft" ></textarea><br>
-            <button id="sqlbtn_6" >SQL生成</button>
-            <button id="sqlcpybtn_6" >テキストエリアをコピー</button>
+            <button type="button" class="btn btn-primary" id="sqlbtn_6" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_6" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
                 <br>⑦レンタル中で、現在の日付でレンタル期限が過ぎている本
             </p>
             <textarea id="sqltext_7" class="search-box" wrap="soft" ></textarea><br>
-            <button id="sqlbtn_7" >SQL生成</button>
-            <button id="sqlcpybtn_7" >テキストエリアをコピー</button>
+            <button type="button" class="btn btn-primary" id="sqlbtn_7" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_7" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
                 <br>⑧本の在庫数を取得
             </p>
             <textarea id="sqltext_8" class="search-box" wrap="soft" ></textarea><br>
-            <button id="sqlbtn_8" >SQL生成</button>
-            <button id="sqlcpybtn_8" >テキストエリアをコピー</button>
+            <button type="button" class="btn btn-primary" id="sqlbtn_8" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_8" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
+            </div>
 
             <div >
                 <h3>ユーザーテーブル(gs_07_user_table)</h3>
