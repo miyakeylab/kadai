@@ -122,4 +122,14 @@ $(function() {
         text.select();
         document.execCommand("copy");
     });
+    
+    $("#sqlbtn_15").on("click", function() {
+        $("#sqltext_15").val("SELECT * FROM gs_07_user_table ORDER BY time DESC;");
+    });
+
+    $("#sqlcpybtn_15").on("click", function() {
+        var text = document.getElementById("sqltext_15");
+        text.select();
+        document.execCommand("copy");
+    });
 });

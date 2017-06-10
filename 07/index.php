@@ -159,7 +159,7 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
             <button type="button" class="btn btn-success" id="sqlcpybtn_12" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
             <p class="lead">
-                <br>12-2.[AVG]ユーザーテーブルのユーザーの平均年齢を取得(小数点切り捨て)
+                <br>13(12-2).[AVG]ユーザーテーブルのユーザーの平均年齢を取得(小数点切り捨て)
             </p>
             <textarea id="sqltext_13" class="search-box" wrap="soft" ></textarea><br>
             <button type="button" class="btn btn-primary" id="sqlbtn_13" >SQL生成</button>
@@ -167,12 +167,21 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
             <a  href="sql.php">SQL実行ページへ</a>
             
             <p class="lead">
-                <br>13.[副問い合わせ]平均年齢(小数点切り捨て)以下のユーザーを取得
+                <br>14.[副問い合わせ]平均年齢(小数点切り捨て)以下のユーザーを取得
             </p>
             <textarea id="sqltext_14" class="search-box" wrap="soft" ></textarea><br>
             <button type="button" class="btn btn-primary" id="sqlbtn_14" >SQL生成</button>
             <button type="button" class="btn btn-success" id="sqlcpybtn_14" >テキストエリアをコピー</button>
             <a  href="sql.php">SQL実行ページへ</a>
+               
+            <p class="lead">
+                <br>15.[ソート]登録時間が新しい順にユーザーを取得
+            </p>
+            <textarea id="sqltext_15" class="search-box" wrap="soft" ></textarea><br>
+                <button type="button" class="btn btn-primary" id="sqlbtn_15" >SQL生成</button>
+            <button type="button" class="btn btn-success" id="sqlcpybtn_15" >テキストエリアをコピー</button>
+            <a  href="sql.php">SQL実行ページへ</a>
+            
         </div>
             <div >
                 <h3>ユーザーテーブル(gs_07_user_table)</h3>
