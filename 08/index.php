@@ -36,7 +36,7 @@
                 </form>
                 <div class="form-footer">
                     <p><a href="reg.php">Create an account</a></p>
-                    <p><a href="administrator.php">administrator</a></p>
+                    <p><a href="administrator.php">Administrator</a></p>
                 </div>
             </div>
         </div>
