@@ -28,3 +28,7 @@ footer{
     display: -o-flex;
     display: flex;
 }
+
+#mapId{
+    pointer-events:none;
+}

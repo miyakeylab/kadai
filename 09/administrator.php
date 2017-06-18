@@ -30,6 +30,8 @@ if($status==false){
       $view .= '</a>';
       $view .= '</p>';
   }
+    
+    $MapId = "AIzaSyC_6SBHbfLwjvLEnd1BzIFSRMK6JzDoyPI";
 }
 ?>
 
@@ -54,8 +56,8 @@ if($status==false){
     </head>
 
     <body>
-        <div id="user_map" style="width:100%; height:500px">test</div>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_6SBHbfLwjvLEnd1BzIFSRMK6JzDoyPI&callback=initialize">
+        <div id="user_map" style="width:100%; height:300px"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?=$MapId?>&callback=initialize">
         </script>
         <div class="container">
             

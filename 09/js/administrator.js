@@ -3,8 +3,10 @@
  */
 var map;
 
+
 $(function() {
-    // 初期化処理
+
+
 });
 
 /**
@@ -13,6 +15,9 @@ $(function() {
 function initialize() {
     // g'z辺り
     mapsInit(35.6672762, 139.7115615);
+
+    $('#user_map').css('pointer-events', 'none');
+
 }
 
 /**
@@ -137,4 +142,6 @@ function mapsInit(lat, lon) {
             }]
         }]
     });
+    
+
 }
