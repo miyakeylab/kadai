@@ -5,7 +5,7 @@
  *
  * @author y.miyake
  * @version 0.0.1
- * @createDate 05/17/2017
+ * @createDate 06/19/2017
  */
 
 /**
@@ -13,6 +13,7 @@
  * @type {boolean}
  */
 var logFlg = true;
+
 
 /**
  * ログ出力
@@ -99,3 +100,4 @@ function SaveStrage(key, value) {
 function StrageClear() {
     localStorage.clear();
 }
+

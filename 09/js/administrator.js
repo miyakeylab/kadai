@@ -8,11 +8,45 @@ var high = [5, 69, 54];  // color of mag 6.0 and above
 var minMag = 1.0;
 var maxMag = 6.0;
 
+var KeyState=0;
 
 $(function() {
-
-
+    $(window).keydown(function (e) {
+        keyProc(e);
+    });
 });
+
+
+/**
+ * キー入力
+ * @param   {object}  e イベントデータ
+ */
+function keyProc(e) {
+    Log("keydown " + e.keyCode);
+    // 上
+    if (e.keyCode === 38 && (KeyState === 0 || KeyState === 1)) {
+        KeyState++;
+        // 下
+    } else if (e.keyCode === 40 && (KeyState === 2 || KeyState === 3)) {
+        KeyState++;
+        //左
+    } else if (e.keyCode === 37 && (KeyState === 4 || KeyState === 6)) {
+        KeyState++;
+        //右
+    } else if (e.keyCode === 39 && (KeyState === 5 || KeyState === 7)) {
+        KeyState++;
+        //A
+    } else if (e.keyCode === 65 && (KeyState === 9)) {
+        KeyState++;
+        alert("test");
+        //B
+    } else if (e.keyCode === 66 && (KeyState === 8)) {
+        KeyState++;
+
+    } else {
+        KeyState = 0;
+    }
+}
 
 /**
  * map初期化コールバック

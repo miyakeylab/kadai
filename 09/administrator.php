@@ -58,7 +58,7 @@ if($status==false){
     </head>
 
     <body>
-        <div id="user_map" style="width:100%; height:300px"></div>
+        <div id="user_map" style="width:100%; height:500px"></div>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?=$MapId?>&callback=initialize">
         </script>
         <div class="container">

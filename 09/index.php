@@ -12,6 +12,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/common.js"></script>
         <script src="js/index.js"></script>
         <link rel="stylesheet" type="text/css" href="css/reset.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -39,6 +40,30 @@
                     <p><a href="administrator.php">Administrator</a></p>
                 </div>
             </div>
+        </div>
+        <!-- header -->
+        <hgroup class="heading">
+            <h1 class="major">Login Form </h1>
+        </hgroup>
+
+        <!-- form starts here -->
+        <form class="sign-up">
+            <h1 class="sign-up-title">Sign up in seconds</h1>
+            <input type="text" class="sign-up-input" placeholder="What's your username?" autofocus>
+            <input type="password" class="sign-up-input" placeholder="Choose a password">
+            <input type="submit" value="Sign me up!" class="sign-up-button">
+        </form>
+
+        <div class="about">
+            <p class="about-links">
+                <a href="http://www.cssflow.com/snippets/sign-up-form" target="_parent">View Article</a>
+                <a href="http://www.cssflow.com/snippets/sign-up-form.zip" target="_parent">Download</a>
+            </p>
+            <p class="about-author">
+                &copy; 2013 <a href="http://thibaut.me" target="_blank">Thibaut Courouble</a> -
+                <a href="http://www.cssflow.com/mit-license" target="_blank">MIT License</a><br>
+                Original PSD by <a href="http://dribbble.com/shots/1037950-Sign-up-freebie" target="_blank">Dylan Opet</a>
+            </p>
         </div>
     </body>
     <footer></footer>
