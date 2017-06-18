@@ -1,4 +1,6 @@
 <?php
+
+require_once("commonData.php");
 //1.  DB接続します
 try {
   $pdo = new PDO('mysql:dbname=gs_db48;charset=utf8;host=localhost','root','');
@@ -31,7 +33,7 @@ if($status==false){
       $view .= '</p>';
   }
     
-    $MapId = "AIzaSyC_6SBHbfLwjvLEnd1BzIFSRMK6JzDoyPI";
+    $MapId = \Common\DEF_MAP_ID;
 }
 ?>
 

@@ -19,6 +19,16 @@ function DbInit($dbname,$charset,$host,$user,$pass)
     return $rtn;
 }
 
+//DB接続関数（PDO）
+function db_con(){
+    $dbname='gs_db48';
+    try {
+        $pdo = new PDO('mysql:dbname='.$dbname.';charset=utf8;host=localhost','root','');
+    } catch (PDOException $e) {
+        exit('DbConnectError:'.$e->getMessage());
+    }
+    return $pdo;
+}
 /**
  * [[Description]]
  * @param [[Type]] $name   [[Description]]
@@ -41,8 +51,7 @@ indate )VALUES(NULL, :name, :email, :naiyou, sysdate())");
     //４．データ登録処理後
     if($status==false){
         //SQL実行時にエラーがある場合（エラーオブジェクト取得して表示）
-        $error = $stmt->errorInfo();
-        exit("QueryError:".$error[2]);
+        queryError($stmt);
     }else{
         //５．index.phpへリダイレクト
         header("Location: index.php");
@@ -53,6 +62,12 @@ indate )VALUES(NULL, :name, :email, :naiyou, sysdate())");
     }
 }
 
+//SQL処理エラー
+function queryError($stmt){
+    //SQL実行時にエラーがある場合（エラーオブジェクト取得して表示）
+    $error = $stmt->errorInfo();
+    exit("QueryError:".$error[2]);
+}
 
 function DbAccessSql($sql)
 {
@@ -278,5 +293,6 @@ function createvideotag($param)
     // パラメータが不正(youtubeのURLではない)ときは埋め込みコードを生成しない。
     return false;
 }
+
 
 ?>
