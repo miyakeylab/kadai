@@ -47,13 +47,18 @@ if($status==false){
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/index.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/administrator.js"></script>
         <link rel="stylesheet" type="text/css" href="css/reset.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
 
     <body>
+        <div id="user_map" style="width:100%; height:500px">test</div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_6SBHbfLwjvLEnd1BzIFSRMK6JzDoyPI&callback=initialize">
+        </script>
         <div class="container">
+            
             <h1>ユーザー一覧</h1>
             <div>
                 <div class="container jumbotron"><?=$view?></div>
