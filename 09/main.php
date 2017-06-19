@@ -17,6 +17,7 @@ if($result == true)
     
     $sql = "SELECT * FROM gs_08_user_table";
     $OtherUser = DbAccessSql_GetOtherUser_url($sql,$id);
+    
 }
 ?>
 

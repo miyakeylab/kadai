@@ -294,5 +294,26 @@ function createvideotag($param)
     return false;
 }
 
+function TimerStrat()
+{
+    echo "開始 ". date('h:i:s',time()) . "\n";
+    for($i=0;$i<3;$i++)
+    {
+        if($i != 0)
+        {
+            AboutDelay($start,3); // start から３秒間まで待つ。
+        }
+        $start = time();
+        // なんかの処理をここに記述する。
+    }
+    echo "終了 ". date('h:i:s',time()) . "\n";
+}
 
+function AboutDelay($start_time,$delay)
+{
+    while(time()-$start_time < $delay)
+    {
+        sleep(1);
+    }
+}
 ?>
