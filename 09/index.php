@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
 
-    <body>
+    <body background="./img/gahag-0022199324-1.jpg">
         <div class="container">
             <div class="starter-template">
                 <hgroup class="heading">

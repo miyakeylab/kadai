@@ -5,6 +5,16 @@ body{
     text-align:center;
     font-size:20px;
     background-color: "#555555";
+    /* 設定したい画像 */
+    background-image: url(../img/gahag-0022199324-1.jpg);
+    /* 画像を上下左右中央寄せ */
+    background-position: center center;
+    /* タイル状には並べないように指定 */
+    background-repeat: no-repeat;
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+    /* 表示するディスプレイの大きさに基づいて、背景画像を縦横比を固定しながら調整 */
+    background-size: cover;
 }
 header{
     background-color: #fff;
