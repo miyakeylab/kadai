@@ -1,8 +1,7 @@
 <?php
 
-
-//共通で使うものを別ファイルにしておきましょう。
 $pdo = null;
+$logintime = null;
 
 function DbInit($dbname,$charset,$host,$user,$pass)
 {
@@ -240,6 +239,18 @@ function DbAccessSql_GetOtherUser_url($sql,$id)
     
     
 }
+
+function DbAccessMessageObject($sql,$time)
+{
+    global $pdo;
+    //２．SQL実行
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':loginTime', $time, PDO::PARAM_STR);
+    $status = $stmt->execute();
+    return $stmt;
+}
+
+
 /**
  * youtubeのURLから埋め込みタグを生成する
  *
@@ -315,5 +326,20 @@ function AboutDelay($start_time,$delay)
     {
         sleep(1);
     }
+}
+
+function SetLoginTime()
+{
+    global $logintime;
+    $date = new DateTime();
+    $logintime=  $date->format('Y-m-d H:i:s');
+    
+}
+
+function GetLoginTime()
+{
+    global $logintime;
+    
+    return $logintime;
 }
 ?>

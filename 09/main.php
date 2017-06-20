@@ -1,6 +1,8 @@
 <?php 
 require_once "functions.php";
 
+SetloginTime();
+
 $id=$_GET["id"];
 
 //1.  DB接続します
