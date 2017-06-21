@@ -2,7 +2,7 @@
 
 $pdo = null;
 $logintime = null;
-
+$MyId = 0;
 function DbInit($dbname,$charset,$host,$user,$pass)
 {
     $rtn = false;
@@ -240,16 +240,24 @@ function DbAccessSql_GetOtherUser_url($sql,$id)
     
 }
 
-function DbAccessMessageObject($sql,$time)
+function DbAccessMessageObject($sql)
 {
     global $pdo;
     //２．SQL実行
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':loginTime', $time, PDO::PARAM_STR);
     $status = $stmt->execute();
     return $stmt;
 }
 
+function DbAccessMessageObject_update($sql,$Id)
+{
+    global $pdo;
+    //２．SQL実行
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':id', $Id, PDO::PARAM_INT);
+    $status = $stmt->execute();
+    return $stmt;
+}
 
 /**
  * youtubeのURLから埋め込みタグを生成する
@@ -341,5 +349,18 @@ function GetLoginTime()
     global $logintime;
     
     return $logintime;
+}
+
+function SetMyId($id)
+{
+    global $MyId;
+    $MyId = $id;
+}
+
+function GetMyId()
+{
+    global $MyId;
+
+    return $MyId;
 }
 ?>

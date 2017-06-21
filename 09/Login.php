@@ -20,7 +20,8 @@ if($result ==true)
 {
     $sql =\Common\DEF_LOGIN_SQL;
     $id=  DbAccessSql_select_Getid($sql,$email,$password);
-    
+
+    SetMyId($id);
   //５．index.phpへリダイレクト
   header("Location: main.php?id=".$id);
   exit;

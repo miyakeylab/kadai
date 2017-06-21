@@ -36,7 +36,8 @@ if($result == true)
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" /> </head>
 

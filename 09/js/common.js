@@ -14,7 +14,6 @@
  */
 var logFlg = true;
 
-
 /**
  * ログ出力
  * @param {string} logdata ログテキスト

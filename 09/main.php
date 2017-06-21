@@ -1,9 +1,8 @@
 <?php 
 require_once "functions.php";
 
-SetloginTime();
-
 $id=$_GET["id"];
+SetMyId($id);
 
 //1.  DB接続します
 $result = DbInit('gs_db48','utf8','localhost','root','');
@@ -61,14 +60,14 @@ if($result == true)
             <!--/.nav-collapse -->
         </div>
         <!--/.container-fluid -->
-    </nav> 
+    </nav>
     <form method="post" action="AddUrl.php" class="pad-botm-10">
         <div>
             <label for="url"></label>
             <span class="glyphicon glyphicon-film" aria-hidden="true"></span><span> URL:</span><span><input type="text" name="url"  />
             <input type="submit" class="button" title="Add" value="Add" /></span>
         </div>
-        <input type="hidden" name="id" value="<?=$id ?>"/>
+        <input type="hidden" id="id" name="id" value="<?=$id ?>"/>
     </form>
         <div class="wrapper">
             <?=$view ?>
