@@ -173,6 +173,37 @@ function DbAccessSql_id_username($sql,$id)
     return $rtn;
 
 }
+
+function DbAccessSql_id_Addmin($sql,$id)
+{
+    global $pdo;
+    $rtn = "";
+    //２．SQL実行
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':id', $id);
+    $status = $stmt->execute();
+
+    if($status==false)
+    {
+        //execute（SQL実行時にエラーがある場合）
+        //$error = $stmt->errorInfo();
+        //exit("ErrorQuery:".$error[2]);
+
+    }else{
+        $colcount = $stmt->columnCount();
+
+        //Selectデータの数だけ自動でループしてくれる
+        while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
+            $rtn .= $result["kanri_flg"];
+            break;
+        }
+    }
+
+    return $rtn;
+
+}
+
+
 function DbAccessSql_id_div($sql,$id)
 {
     global $pdo;
@@ -226,7 +257,7 @@ function DbAccessSql_GetOtherUser_url($sql,$id)
             if($result["id"] != $id)
             {
                 $rtn .= "<li>";
-                $rtn .= "<a href=main_2.php?id=".$result["id"]."&myid=".$id.">";
+                $rtn .= "<a href=main_other.php?id=".$result["id"].">";
                 $rtn .= $result["user_name"];
                 $rtn .= "</a>";
                 $rtn .= "</li>";
@@ -239,7 +270,38 @@ function DbAccessSql_GetOtherUser_url($sql,$id)
     
     
 }
+function DbAccessSql_GetOtherUser_url_nologin($sql)
+{
+    global $pdo;
+    $rtn = "";
+    //２．SQL実行
+    $stmt = $pdo->prepare($sql);
+    $status = $stmt->execute();
 
+    if($status==false)
+    {
+        //execute（SQL実行時にエラーがある場合）
+        //$error = $stmt->errorInfo();
+        //exit("ErrorQuery:".$error[2]);
+
+    }else{
+        $colcount = $stmt->columnCount();
+
+        //Selectデータの数だけ自動でループしてくれる
+        while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+            $rtn .= "<li>";
+            $rtn .= "<a href=main_other.php?id=".$result["id"].">";
+            $rtn .= $result["user_name"];
+            $rtn .= "</a>";
+            $rtn .= "</li>";
+        }
+    }
+
+    return $rtn;
+
+
+}
 function DbAccessMessageObject($sql)
 {
     global $pdo;

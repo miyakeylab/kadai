@@ -1,8 +1,15 @@
 <?php 
 require_once "functions.php";
+session_start();
 
-$id=$_GET["id"];
-SetMyId($id);
+if(!isset($_SESSION["chk_ssid"]) || $_SESSION["chk_ssid"]!=session_id())
+{
+    echo "Login Error";
+    echo '<br><p><a href="index.php">loginへ戻る</a></p>';
+    exit;
+}
+
+$id=$_SESSION["id"];
 
 //1.  DB接続します
 $result = DbInit('gs_db48','utf8','localhost','root','');
@@ -15,7 +22,7 @@ if($result == true)
     
     $sql = "SELECT * FROM gs_08_user_table WHERE id = :id";
     $name = DbAccessSql_id_username($sql,$id);
-    
+    $admin = DbAccessSql_id_Addmin($sql,$id);
     $sql = "SELECT * FROM gs_08_user_table";
     $OtherUser = DbAccessSql_GetOtherUser_url($sql,$id);
     
@@ -54,7 +61,14 @@ if($result == true)
                             <?=$OtherUser ?>
                         </ul>
                     </li>
-                    <li><a href="./index.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+                    <?php
+                    if($admin == 1)
+                    {
+                        echo '<li><a href="./administrator.php"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></li>';
+                    }
+        
+                    ?>
+                    <li><a href="./logout.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->

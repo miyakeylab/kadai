@@ -1,10 +1,22 @@
 <?php 
 require_once "functions.php";
+session_start();
 
 $id=$_GET["id"];
-$myid=$_GET["myid"];
+$myid = 0;
+if(isset($_SESSION["id"]))
+{
+    $myid=$_SESSION["id"];
+}
 
-$myidUrl = "main.php?id=".$myid;
+if($myid == 0)
+{
+    $myidUrl = "./index.php";
+}
+else
+{
+    $myidUrl = "./main.php";
+}
 //1.  DB接続します
 $result = DbInit('gs_db48','utf8','localhost','root','');
 
@@ -16,8 +28,12 @@ if($result == true)
     
     $sql = "SELECT * FROM gs_08_user_table WHERE id = :id";
     $name = DbAccessSql_id_username($sql,$id);
+    if($myid == 0)
+    {
+        $sql = "SELECT * FROM gs_08_user_table";
+        $OtherUser = DbAccessSql_GetOtherUser_url_nologin($sql);
+    }
     
-
 }
 ?>
 
@@ -48,7 +64,13 @@ if($result == true)
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left"><?=$name ?></ul>
                 <ul class="nav navbar-nav navbar-inverse navbar-right">
-                    <li><a href="./index.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+                   <?php 
+                    if($myid == 0)
+                    {
+                    echo '<li class="dropdown active "> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a><ul class="dropdown-menu">'.$OtherUser.'</ul></li>';
+                    }
+                    ?>
+                    <li><a href="./logout.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->

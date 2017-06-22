@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once "functions.php";
 require_once "commonData.php";
@@ -21,9 +22,11 @@ if($result ==true)
     $sql =\Common\DEF_LOGIN_SQL;
     $id=  DbAccessSql_select_Getid($sql,$email,$password);
 
-    SetMyId($id);
+
+    $_SESSION["chk_ssid"]  = session_id();
+    $_SESSION["id"] = $id;
   //５．index.phpへリダイレクト
-  header("Location: main.php?id=".$id);
+  header("Location: main.php");
   exit;
 }
 else

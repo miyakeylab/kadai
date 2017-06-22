@@ -24,9 +24,7 @@ if($status==false){
 //    $view .= $result["name"]."[".$result["indate"]."]<br>";
       
       $view .= '<p>';
-      $view .= '<a href="detail.php?id='. $result["id"].'">';
       $view .= $result["user_name"].'['.$result["reg_time"] ."]";
-      $view .= '</a>';
       $view .= '<a href="delete.php?id='.$result["id"].'">';
       $view .=  "[削除]";
       $view .= '</a>';
