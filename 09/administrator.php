@@ -66,6 +66,7 @@ if($status==false){
                 <div class="container jumbotron"><?=$view?></div>
             </div>
         </div>
+        <div id="command"></div>
     </body>
     <footer> <p><a href="index.php">loginへ戻る</a></p></footer>
 
