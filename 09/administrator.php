@@ -61,11 +61,12 @@ if($status==false){
         </script>
         <div class="container">
             
-            <h1>ユーザー一覧</h1>
+            <h1 color="#ffffff">ユーザー一覧</h1>
             <div>
                 <div class="container jumbotron"><?=$view?></div>
             </div>
         </div>
+        <div id="command"></div>
     </body>
     <footer> <p><a href="index.php">loginへ戻る</a></p></footer>
 
