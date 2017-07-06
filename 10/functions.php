@@ -372,7 +372,7 @@ function createvideotag($param)
             }
         }
         // 埋め込みコードを返す
-        return '<div><iframe width="300" height="300" src="https://www.youtube.com/embed/' . $video_id . $v_param . '" frameborder="0" allowfullscreen></iframe><input type="submit" class="button" title="削除" value="Del" /></div>';
+        return '<iframe width="300" height="300" src="https://www.youtube.com/embed/' . $video_id . $v_param . '" frameborder="0" allowfullscreen></iframe>';
     }
     // パラメータが不正(youtubeのURLではない)ときは埋め込みコードを生成しない。
     return false;
