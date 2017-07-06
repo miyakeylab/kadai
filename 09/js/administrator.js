@@ -37,8 +37,9 @@ function keyProc(e) {
         KeyState++;
         //A
     } else if (e.keyCode === 65 && (KeyState === 9)) {
-        KeyState++;
-        alert("test");
+        KeyState=0;
+        $("#command").html(
+            '<form method="post" action="message.php"><input type="hidden" name="message" value="1" ><input type="submit" value="ゴゴゴゴ"></form>)');
         //B
     } else if (e.keyCode === 66 && (KeyState === 8)) {
         KeyState++;
