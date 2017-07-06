@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2017 年 6 月 22 日 23:38
+-- Generation Time: 2017 年 7 月 06 日 22:31
 -- サーバのバージョン： 5.6.21
 -- PHP Version: 5.6.3
 
@@ -218,10 +218,10 @@ CREATE TABLE IF NOT EXISTS `gs_08_user_access_log_table` (
 CREATE TABLE IF NOT EXISTS `gs_08_user_table` (
 `id` int(12) NOT NULL,
   `user_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  `user_pass` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `user_pass` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `reg_time` datetime NOT NULL,
   `kanri_flg` int(4) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- テーブルのデータのダンプ `gs_08_user_table`
@@ -231,7 +231,13 @@ INSERT INTO `gs_08_user_table` (`id`, `user_name`, `user_pass`, `reg_time`, `kan
 (1, 'tes@tes', 'tes', '2017-06-15 10:10:51', 1),
 (4, 'test2@test', 'test2', '2017-06-15 11:23:06', 0),
 (5, 'tes3@tes', 'tes3', '2017-06-15 11:45:55', 0),
-(6, 'tes5', 'tes5', '2017-06-20 04:39:59', 0);
+(6, 'tes5', 'tes5', '2017-06-20 04:39:59', 0),
+(7, 'test0706', '$2y$10$jlsYV70.QJiFVxglk1VHQOCy4WY66vF6m06VBB30RI3pKZI8eZ3T.', '2017-07-06 20:36:35', 0),
+(8, 'a', '$2y$10$8O7PCObPLvdLt.sh9MYabOidbt1k5EOleOSf05HMTb5X4LguV44Ja', '2017-07-06 20:41:44', 0),
+(10, 'b', '$2y$10$MYgpkOnH0XGGEBW93KvdROsfwVJ5Y36cEUrX9vkv6vnWXnvSNqsxe', '2017-07-06 20:49:56', 0),
+(11, 'new', '$2y$10$egAd58avPjy1myQr.AxP7uuYeL77nJk9PrNPJKZip15m4OQE72xWi', '2017-07-06 21:16:07', 0),
+(12, 'd', '$2y$10$zEjvNkFmWPUnNh6Ur0O2YudQSKKYZ2bNKNVGRNljfqvZEb7jM8Ruu', '2017-07-06 22:16:35', 0),
+(13, 'd', '$2y$10$icr2JMjbpZUYO2vGP6LuK.dgCD51zTS4jgGzlb0G66Zwa6RUD1g1m', '2017-07-06 22:16:52', 0);
 
 -- --------------------------------------------------------
 
@@ -251,7 +257,6 @@ CREATE TABLE IF NOT EXISTS `gs_08_user_url_table` (
 
 INSERT INTO `gs_08_user_url_table` (`id`, `user_id`, `url`) VALUES
 (1, 1, 'https://www.youtube.com/watch?v=Cnj64DsO8T8'),
-(2, 1, 'https://www.youtube.com/watch?v=GTHZCppTRqg'),
 (3, 1, 'https://www.youtube.com/watch?v=tsi5-O3Qe6c'),
 (4, 1, 'https://www.youtube.com/watch?v=EHfx9LXzxpw'),
 (5, 1, 'https://www.youtube.com/watch?v=BUItRCnW5Lw'),
@@ -276,7 +281,7 @@ CREATE TABLE IF NOT EXISTS `gs_09_message_table` (
   `send_time` datetime NOT NULL,
   `user_id` int(12) NOT NULL,
   `read_flg` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- テーブルのデータのダンプ `gs_09_message_table`
@@ -284,7 +289,10 @@ CREATE TABLE IF NOT EXISTS `gs_09_message_table` (
 
 INSERT INTO `gs_09_message_table` (`id`, `message_id`, `send_time`, `user_id`, `read_flg`) VALUES
 (1, 1, '2017-06-21 07:20:18', 0, 1),
-(2, 2, '2017-06-22 07:38:31', 1, 1);
+(2, 2, '2017-06-22 07:38:31', 1, 1),
+(3, 1, '2017-06-24 11:10:54', 0, 1),
+(4, 1, '2017-06-24 11:13:14', 0, 1),
+(5, 1, '2017-06-24 11:13:30', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -297,23 +305,48 @@ CREATE TABLE IF NOT EXISTS `gs_an_table` (
   `name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `naiyou` text COLLATE utf8_unicode_ci,
-  `indate` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='2017/06/03 ';
+  `indate` datetime NOT NULL,
+  `img` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='2017/06/03 ';
 
 --
 -- テーブルのデータのダンプ `gs_an_table`
 --
 
-INSERT INTO `gs_an_table` (`id`, `name`, `email`, `naiyou`, `indate`) VALUES
-(1, 'Miyake123_aaa', 'miyake@test.test123_aaa', 'テストmiyake123_aaa', '2017-06-10 15:58:48'),
-(2, '日付も更新', '日付も更新', '日付も更新', '2017-06-10 15:58:51'),
-(3, 'test2', 'test2@test.test', 'テスト2', '2017-06-10 16:00:58'),
-(4, 'test3', 'test3@test.test', 'テスト3', '2017-06-10 16:00:55'),
-(6, 'test5', 'test5@test.test', 'テスト5', '2017-06-10 16:15:50'),
-(10, 'ffffffff', 'aaaaa', 'aaaaa', '2017-06-10 16:07:44'),
-(12, 'aa', 'aa', 'aaa', '2017-06-03 17:41:37'),
-(13, 'ted', 'tedddd', 'tesssss', '2017-06-10 16:07:48'),
-(14, 'test0610＿更新', '0610＿更新', '0610＿更新', '2017-06-10 16:07:52');
+INSERT INTO `gs_an_table` (`id`, `name`, `email`, `naiyou`, `indate`, `img`) VALUES
+(1, 'Miyake123_aaa', 'miyake@test.test123_aaa', 'テストmiyake123_aaa', '2017-06-10 15:58:48', NULL),
+(2, '日付も更新', '日付も更新', '日付も更新', '2017-06-10 15:58:51', NULL),
+(3, 'test2', 'test2@test.test', 'テスト2', '2017-06-10 16:00:58', NULL),
+(4, 'test3', 'test3@test.test', 'テスト3', '2017-06-10 16:00:55', NULL),
+(6, 'test5', 'test5@test.test', 'テスト5', '2017-06-10 16:15:50', NULL),
+(10, 'ffffffff', 'aaaaa', 'aaaaa', '2017-06-10 16:07:44', NULL),
+(12, 'aa', 'aa', 'aaa', '2017-06-03 17:41:37', NULL),
+(13, 'ted', 'tedddd', 'tesssss', '2017-06-10 16:07:48', NULL),
+(14, 'test0610＿更新', '0610＿更新', '0610＿更新', '2017-06-10 16:07:52', NULL),
+(15, 'test', 'test', '<h2><span style="color:#ffffff"><span style="background-color:#27ae60">aaaa</span></span></h2>\r\n\r\n<p><span style="font-size:28px">test</span></p>\r\n\r\n<p><span style="font-family:Comic Sans MS,cursive">tetetetetetetetettettete</span></p>\r\n\r\n<p>&nbsp;</p>\r\n', '2017-06-24 16:27:38', './upload/3942015250-kabekin8-g1k-1280x800-MM-100.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `gs_cms_table`
+--
+
+CREATE TABLE IF NOT EXISTS `gs_cms_table` (
+`id` int(12) NOT NULL,
+  `title` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `article` text COLLATE utf8_unicode_ci NOT NULL,
+  `indate` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `gs_cms_table`
+--
+
+INSERT INTO `gs_cms_table` (`id`, `title`, `article`, `indate`) VALUES
+(1, 'test1', 'これはテスト１です。', '2017-06-24 00:00:00'),
+(2, 'test2', 'テスト２です。特に内容はありません。', '2017-06-23 00:00:00'),
+(3, 'tes3', 'tes3333', '2017-06-25 00:00:00'),
+(4, 'test4', 'test444444444', '2017-06-20 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -409,6 +442,12 @@ ALTER TABLE `gs_an_table`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `gs_cms_table`
+--
+ALTER TABLE `gs_cms_table`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `gs_user_table`
 --
 ALTER TABLE `gs_user_table`
@@ -452,7 +491,7 @@ MODIFY `log_id` int(16) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `gs_08_user_table`
 --
 ALTER TABLE `gs_08_user_table`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `gs_08_user_url_table`
 --
@@ -462,12 +501,17 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 -- AUTO_INCREMENT for table `gs_09_message_table`
 --
 ALTER TABLE `gs_09_message_table`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `gs_an_table`
 --
 ALTER TABLE `gs_an_table`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `gs_cms_table`
+--
+ALTER TABLE `gs_cms_table`
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `gs_user_table`
 --
